@@ -12,6 +12,9 @@
             "dest": "index.js",
             "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
         }
-    ]   
+    ] ,
+    "env": {
+        "MONGODB_URI": "mongodb://localhost:5000/services"
+    } 
 
 }
