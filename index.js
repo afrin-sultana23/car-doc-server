@@ -45,7 +45,7 @@ const verifyJwt = (req, res, next) => {
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
+    //await client.connect();
 
     const serviceCollection = client.db('serviceDB').collection('services');
     const bookingCollection = client.db('bookingDB').collection('bookings');
@@ -65,7 +65,9 @@ async function run() {
     // services routes
     app.get('/services', async(req, res) => {
         const cursor = serviceCollection.find();
+        console.log('cursor', cursor);
         const result = await cursor.toArray();
+        console.log('result', result);
         res.send(result);
     });
 
