@@ -136,6 +136,10 @@ async function run() {
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
+    
+    app.listen(port, () => {
+    console.log(`Car Doctor listening on port ${port}`);
+});
   } finally {
   
   }
@@ -148,6 +152,3 @@ app.get('/', (req, res) => {
     res.send('Welcome to the Car Doctor!');
 });
 
-app.listen(port, () => {
-    console.log(`Car Doctor listening on port ${port}`);
-});
